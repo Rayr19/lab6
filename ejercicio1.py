@@ -9,8 +9,8 @@ def validar_temperatura(temp):
         return False
     return True
 
-def evaluar_temperatura(temp):
-    if temp > limite_temperatura:
+def evaluar_temperatura(temp, limite):
+    if temp > limite:
         return "ALERTA"
     return "NORMAL"
 
