@@ -1,18 +1,24 @@
 limite_temperatura = 50
 
+def ingresar_temperatura():
+    return float(input("Ingrese temperatura: "))
+
 def validar_temperatura(temp):
     if temp < 0:
-        print("Error: temperatura invalida")
+        print("Error")
         return False
     return True
 
-def mostrar_estado(temp):
-    if  temp > limite_temperatura:
-        print("Alerta")
-    else:
-        print("Normal")
+def evaluar_temperatura(temp):
+    if temp > limite_temperatura:
+        return "ALERTA"
+    return "NORMAL"
 
-temperatura = float(input("Ingrese temperatura: "))
+def mostrar_resultado(estado):
+    print("Estado:", estado)
 
-if validar_temperatura(temperatura):
-    mostrar_estado(temperatura)
+temp = ingresar_temperatura()
+
+if validar_temperatura(temp):
+    estado = evaluar_temperatura(temp)
+    mostrar_resultado(estado)
